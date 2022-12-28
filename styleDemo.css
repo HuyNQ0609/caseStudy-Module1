@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*--------------------------------header---------------------- */
+ul {
+    list-style: none;
+}
+li {
+    padding-top: 7px;
+}
+a{
+    text-decoration: none;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+header {
+    background-color: #8d2700;
+    height: 40px;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+header ul li a {
+    color: white;
+    font-size: 15px;
+}
+header ul li:nth-child(2) a {
+    color: #b5fc00;
+}
+header ul li:nth-child(2) i {
+    color: #b5fc00;
+    font-size: 15px;
+    margin-left: 7px;
+}
+header ul li:nth-child(3) {
+    position: relative;
+}
+header ul li:nth-child(3) input {
+    width: 100%;
+    height: 30px;
+    border-radius:5px;
+    border: none;
+    padding-left: 6px;
+    outline: none;
+}
+header ul li:nth-child(3) i {
+    position: absolute;
+    font-size: 15px;
+    right: 10px;
+    color: #333;
+    line-height: 32px;
+    cursor: pointer;
+}
+header ul li:nth-child(4) button {
+    height: 30px;
+    padding:0 12px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #bcfb28;
+    border: 1px solid rgb(70, 68, 68);
+    border-radius: 5px;
+    trainsition: all 0.3s ease;
+}
+header ul li:nth-child(4) button i {
+    margin-right: 6px;
+}
+header ul li:nth-child(4) button:hover {
+    background-color: #fc5500;
+}
+header ul li:nth-child(5) {
+    text-align: center;
+}
+header ul li:nth-child(5):hover a {
+    color: #b5fc00;
+}
+header ul li:nth-child(6) a {
+    color: #b5fc00;
+}
+.btn-content {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #b5fc00;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.btn-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: #b5fc00;
+    display: block;
+    pointer-events: none;
+    animation: btnani 2s linear infinite;
+}
+@keyframes btnani {
+    from{
+        opacity: 0.4;
+    }
+    to {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+/*--------------------------------------nav--------------------------------------*/
+nav {
+    background-color: #fea672;
+    height: 60px
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.newPhone {
+    max-width: 1200px;
+    margin: auto;
+}
+li {
+    list-style: none;
+}
+.slider {
+    padding: 20px 0;
+    height: 350px;
+}
+.sliderContent {
+    display: flex;
+    justify-content: space-between;
+}
+.sliderContentLeft {
+    width: 65%
+}
+.sliderContentLeftTop {
+    width: 100%;
+    height: 300px;
+    padding-left: 30px;
+    position: relative;
+}
+.sliderContentLeftTop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sliderContentRight {
+    width: 35%;
+}
+.sliderContentLeftBottom {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ddd;
+    border-top: none;
+    height: 50px;
+}
+.sliderContentLeftBottom li {
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px 0;
+    height: 100%;
+    line-height: 38px;
+    position: relative;
+}
+.sliderContentLeftBottom li::before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 1px;
+    background-color: #ddd;
+    right: 0;
+}
+.sliderContentLeftBottom li.active {
+    border-top: 4px solid #fc5500;
+}
+.sliderContentRight {
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    justify-content: space-around;
+}
+.sliderContentRight li {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.sliderContentRight li img {
+    width: 200px;
+    height: 170px;
+}
+.sliderContentLeftTopBtn {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.sliderContentLeftTopBtn i {
+    color: #333;
+    font-size: 32px;
+    height: 35px;
+    width: 25px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.sliderContentLeftTop:hover i {
+    opacity: 1;
+}
+/*------------------------------phoneProduct--------------------------*/
+.productContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product {
+    width: 20%;
+    padding: 50px 30px 30px;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.product img {
+    width: 100%;
+}
+.product a {
+    text-decoration: line-through;
+}
+.product span {
+    font-size: 12px;
+}
