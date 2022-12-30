@@ -260,10 +260,29 @@ nav {
 }
 /*---------------------------------cart----------------------------------*/
 .cart {
-    width: 50%;
+    width: 500px;
     margin: auto;
     text-align: center;
-    padding-top: 30px;
+    padding: 12px 12px;
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    background-color: #ffffd4;
+    overflow: scroll;
+}
+.cart button {
+    margin-top: 12px;
+    height: 30px;
+    padding: 0 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    background-color: lightblue;
+}
+.cart button:hover {
+    background: #fc6767;
 }
 .cart h2 {
     margin-bottom: 20px;
@@ -284,6 +303,16 @@ nav {
 .cart table tbody tr td:last-child {
     text-align: right;
 }
+.cart i {
+    color: black ;
+    transition: all 0.5s ease;
+
+}
+.cart i:hover {
+    font-color: red;
+    color: red;
+}
+
 /*---------------------------------footer--------------------------------*/
 footer {
     background-color: #fba1a1;

@@ -19,34 +19,37 @@ function addCart(productImg, productName, productPrice) {
         }
     }
     let addTr = document.createElement("tr");
-    addTr.innerHTML = '<tr><td style="display: flex; align-items: center"><img style="width: 70px" src="' + productImg + '" alt=""><span class="cartTitleName">' + productName + '</span></td><td><p><span class="cartPrice">' + productPrice + '</span><sup>đ</sup></p></td><td><input style="width: 30px; outline: none" type="number" value="1" min="1"></td><td style="cursor: pointer"><span class="delete">Hủy</span></td></tr>';
+    addTr.innerHTML = `<tr>
+                            <td style="display: flex; align-items: center"><img style="width: 70px" src="${productImg}" alt=""><span class="cartTitleName">${productName}</span></td>
+                            <td><p><span class="cartPrice">${productPrice}</span><sup>đ</sup></p></td>
+                            <td><input class="totalInput" style="width: 30px; outline: none" type="number" value="1" min="1"></td>
+                            <td style="cursor: pointer"><span class="delete">Hủy</span></td>
+                       </tr>`;
     let cartTable = document.querySelector("tbody");
     cartTable.append(addTr);
+    cartTotal();
+    deleteCartItem();
+    inputChange()
 }
-cartTotal();
+
 function cartTotal() {
     let cartItem = document.querySelectorAll("tbody tr");
-    let priceT = document.querySelector(".cartPriceT");
-    let total = 0;
     let sumAll = 0;
     for (let i = 0; i < cartItem.length; i++) {
-        let inputValue = cartItem[i].querySelector("tbody input").value;
+        let inputValue = cartItem[i].querySelector(".totalInput").value;
         let productPrice = cartItem[i].querySelector(".cartPrice").innerHTML;
-        sumAll = inputValue * productPrice;
-        total = Math.round(sumAll);
+        sumAll += Number(inputValue) * Number(productPrice);
     }
-    priceT.innerHTML = (total * 1000).toLocaleString("de-DE");
-    let cartTotalX = document.querySelector(".resultTotal");
-    cartTotalX.innerHTML = (total * 1000).toLocaleString("de-DE");
-    deleteCartItem();
-    inputChange();
+    let cartTotal = document.querySelector("form div span");
+    cartTotal.innerHTML = sumAll.toLocaleString("de-DE");
 }
 function deleteCartItem() {
-    let btnItem = document.querySelectorAll(".delete");
-    for (let i = 0; i < btnItem.length; i++) {
-        btnItem.addEventListener("click",function(event) {
+    let cartItem = document.querySelectorAll("tbody tr");
+    for (let i = 0; i < cartItem.length; i++) {
+        let deleteCart = document.querySelectorAll(".delete");
+        deleteCart[i].addEventListener("click",function(event) {
             let deleteBtn = event.target;
-            let cartParent = deleteBtn.parentElement;
+            let cartParent = deleteBtn.parentElement.parentElement;
             cartParent.remove();
             cartTotal()
         })
@@ -55,9 +58,14 @@ function deleteCartItem() {
 function inputChange() {
     let cartItem = document.querySelectorAll("tbody tr");
     for (let i = 0; i < cartItem.length; i++) {
-        let inputValue = cartItem[i].querySelector("input");
+        let inputValue = cartItem[i].querySelector(".totalInput");
         inputValue.addEventListener("change",function (){
             cartTotal();
         })
     }
 }
+let cartTimes = document.querySelectorAll(".fa-circle-xmark");
+let cartShow = document.querySelector(".fa-shopping-cart");
+cartShow.addEventListener("click",function(){
+    document.querySelector(".cart").style.right = "0";
+})
