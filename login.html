@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="http://localhost:63342/style/">
+    <script src="https://kit.fontawesome.com/13a7b8c203.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form action="" id="formLogin">
+            <h1 class="formHeading">Đăng nhập</h1>
+            <div class="formGroup">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" class="formInput" placeholder="Tên đăng nhập" id="loginName">
+            </div>
+            <div class="formGroup">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" class="formInput" placeholder="Email" id="loginEmail">
+            </div>
+            <div class="formGroup">
+                <i class="fa-solid fa-phone"></i>
+                <input type="text" class="formInput" placeholder="Số điện thoại" id="loginPhone">
+            </div>
+            <div class="formGroup">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" class="formInput" placeholder="Mật khẩu" id="loginPassword">
+                <div id="eye"><i class="fa-regular fa-eye"></i></div>
+            </div>
+            <input type="submit" value="Đăng nhập" class="formSubmit" onclick="changeWeb()">
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"> </script>
+<script src="loginFunction.js"></script>
+</html>

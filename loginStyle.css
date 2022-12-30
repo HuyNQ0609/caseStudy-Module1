@@ -1,0 +1,60 @@
+body {
+    background-color: #fffafa;
+}
+#wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#formLogin {
+    max-width: 400px;
+    background-color: #fe9572;
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0 0 17px 2px yellowgreen;
+}
+.formHeading {
+    font-size: 25px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.formGroup {
+    border-bottom: 1px solid #dddddd;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.formGroup i {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-right: 15px;
+}
+.formInput {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #333333;
+    flex-grow: 1;
+}
+#eye i {
+    padding-right: 0;
+    cursor: pointer;
+}
+.formInput::placeholder {
+    color: red;
+}
+.formSubmit {
+    background: transparent;
+    border: 1px solid #fffce9;
+    color: #fffce9;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    transition: 0.5s ease-in-out;
+    margin-top: 50px;
+}
+.formSubmit:hover {
+    border: 1px solid darkred;
+}
